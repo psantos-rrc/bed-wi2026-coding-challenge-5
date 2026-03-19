@@ -1,4 +1,9 @@
 import express, { Express } from "express";
+import dotenv from "dotenv";
+
+// Load environment variables
+dotenv.config();
+
 import resourceRoutes from './api/v1/routes/resourceRoutes'
 import setupSwagger from "./config/swagger";
 
