@@ -1,6 +1,7 @@
 // Import external resources
 import express, { Express } from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 // Load environment variables
 dotenv.config();
@@ -9,6 +10,7 @@ dotenv.config();
 import resourceRoutes from './api/v1/routes/resourceRoutes'
 import setupSwagger from "./swagger";
 import { getHelmetConfig } from "./config/helmetConfig";
+import { getCorsOptions } from "./config/corsConfig";
 
 // Initialize Express application
 const app: Express = express();
@@ -20,8 +22,10 @@ app.use("/api/v1", resourceRoutes);
 // Setup Helmet
 app.use(getHelmetConfig());
 
+// Setup CORS
+app.use(cors(getCorsOptions()));
+
 // Setup Swagger
 setupSwagger(app)
-
 
 export default app;
