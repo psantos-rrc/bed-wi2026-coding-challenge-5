@@ -8,7 +8,7 @@ dotenv.config();
 
 // Import internal resources
 import resourceRoutes from './api/v1/routes/resourceRoutes'
-import setupSwagger from "./swagger";
+import setupSwagger from "./config/swagger";
 import { getHelmetConfig } from "./config/helmetConfig";
 import { getCorsOptions } from "./config/corsConfig";
 
