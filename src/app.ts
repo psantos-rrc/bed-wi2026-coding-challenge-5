@@ -15,10 +15,6 @@ import { getCorsOptions } from "./config/corsConfig";
 // Initialize Express application
 const app: Express = express();
 
-// Setup routes
-app.use(express.json());
-app.use("/api/v1", resourceRoutes);
-
 // Setup Helmet
 app.use(getHelmetConfig());
 
@@ -27,5 +23,9 @@ app.use(cors(getCorsOptions()));
 
 // Setup Swagger
 setupSwagger(app)
+
+// Setup routes
+app.use(express.json());
+app.use("/api/v1", resourceRoutes);
 
 export default app;

@@ -15,11 +15,8 @@ const swaggerOptions: swaggerJsdoc.Options = {
                 description: "Local server",
             },
         ],
-        components: {
-            // TODO 
-        },
     },
-    apis: ["./src/api/v1/routes/*.ts", "./src/api/v1/validations/*.ts"], // Path to the API docs and schemas
+    apis: ["./src/api/v1/routes/*.ts"], // Path to the API docs
 };
 
 // Generate the Swagger spec

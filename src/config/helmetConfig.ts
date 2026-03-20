@@ -13,16 +13,16 @@ export const getHelmetConfig = () => {
 
     if (isDevelopment) {
         return helmet({
-            ...baseConfig,
+            ...baseConfig, // Include baseConfig
             hsts: false, // No HTTPS enforcement in development
         });
     }
 
     // Production gets full security
     return helmet({
-        ...baseConfig,
+        ...baseConfig, // Include baseConfig
         hsts: {
-            maxAge: 31536000,
+            maxAge: 31536000, // Add timeout for HTTPS enforcement after which HTTPS will need to be reauthorized
             includeSubDomains: true,
             preload: true,
         },
